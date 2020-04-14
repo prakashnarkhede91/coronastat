@@ -1,0 +1,119 @@
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
+<!-- * * * * * * * to get started with your project! * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<style>
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 3px 0;
+    font-size: 22px;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .spacer {
+    flex: 1;
+  }
+
+  .toolbar {
+    height: 60px;
+    margin: -8px;
+    display: flex;
+    align-items: center;
+    background-color: #1976d2;
+    color: white;
+    font-weight: 600;
+  }
+
+  .toolbar img {
+    margin: 0 16px;
+  }
+
+  .toolbar #twitter-logo {
+    height: 40px;
+    margin: 0 16px;
+  }
+
+  .toolbar #twitter-logo:hover {
+    opacity: 0.8;
+  }
+
+  .content {
+    display: flex;
+    margin: 32px auto;
+
+    max-width: 960px;
+    flex-direction: column;
+    align-items: center;
+  }
+</style>
+
+<!-- Toolbar -->
+<div class="toolbar" role="banner" style="padding-left:50px;">
+
+  <span>
+    <h3>Corona Statistics</h3>
+  </span>
+  <div class="spacer"></div>
+
+</div>
+
+<br>
+
+<div style="display: block; margin-left: 25%;">
+
+  <div style="width: 400px;">
+    <h3>Chart Notation For {{chartfor}}</h3>
+    <canvas baseChart [data]="pieChartData" [labels]="pieChartLabels" [chartType]="pieChartType"
+      [options]="pieChartOptions" [plugins]="pieChartPlugins" [legend]="pieChartLegend">
+    </canvas>
+  </div>
+</div>
+<h3>State Wise Live data</h3>
+<table class="table table-striped">
+  <thead>
+    <tr>
+
+      <th scope="col">location</th>
+      <th scope="col">Indian</th>
+      <th scope="col">Foreign</th>
+      <th scope="col">Discharged</th>
+      <th scope="col">Deaths</th>
+      <th scope="col">Confirmed</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr style="background-color: aqua; cursor: pointer;" (click)="viewChart('total',0)">
+
+      <td>India</td>
+      <td>{{ summary.confirmedCasesIndian }}</td>
+      <td>{{ summary.confirmedCasesForeign }}</td>
+      <td>{{ summary.discharged }}</td>
+      <td>{{ summary.deaths }}</td>
+      <td>{{ summary.total }}</td>
+
+    </tr>
+    <tr *ngFor="let city of citys; index as i" style="cursor: pointer;" (click)="viewChart('each',city.loc)">
+      <td>{{ city.loc }}</td>
+      <td>{{ city.confirmedCasesIndian }}</td>
+      <td>{{ city.confirmedCasesForeign }}</td>
+      <td>{{ city.discharged }}</td>
+      <td>{{ city.deaths }}</td>
+      <td>{{ city.totalConfirmed }}</td>
+
+    </tr>
+  </tbody>
+</table>
+<router-outlet>
+</router-outlet>
