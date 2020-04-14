@@ -476,7 +476,6 @@ class AppComponent {
         }
         else {
             this.result = this.citys.filter(city => city.loc == location)[0];
-            console.log(this.result);
             this.initializeChart(this.result.deaths, this.result.totalConfirmed, this.result.discharged);
             this.chartfor = location;
         }
@@ -529,7 +528,7 @@ AppComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineCompo
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](28, "tbody");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](29, "tr", 7);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function AppComponent_Template_tr_click_29_listener() { return ctx.viewChart("total", 0); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function AppComponent_Template_tr_click_29_listener() { return ctx.viewChart("india", 0); });
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](30, "td");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](31, "India");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();

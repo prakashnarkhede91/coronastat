@@ -619,7 +619,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             this.result = this.citys.filter(function (city) {
               return city.loc == location;
             })[0];
-            console.log(this.result);
             this.initializeChart(this.result.deaths, this.result.totalConfirmed, this.result.discharged);
             this.chartfor = location;
           }
@@ -732,7 +731,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](29, "tr", 7);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function AppComponent_Template_tr_click_29_listener() {
-            return ctx.viewChart("total", 0);
+            return ctx.viewChart("india", 0);
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](30, "td");
