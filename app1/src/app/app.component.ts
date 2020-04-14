@@ -79,7 +79,6 @@ export class AppComponent {
   }
 
   initializeChart(Deaths: number, Confirmed: number, Discharged: number) {
-
     this.Confirmed = Confirmed;
     this.Deaths = Deaths;
     this.Discharged = Discharged;
@@ -94,7 +93,6 @@ export class AppComponent {
     }
     else {
       this.result = this.citys.filter(city => city.loc == location)[0];
-      console.log(this.result);
       this.initializeChart(this.result.deaths, this.result.totalConfirmed, this.result.discharged);
       this.chartfor = location;
     }
